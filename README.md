@@ -1,6 +1,6 @@
 # .NET Aspire Chat application leveraging Azure Open AI service and gpt-35-turbo model
 
-![alt text](https://github.com/parthshethia786/chatapp-dotnetAspire-ollama-phi3/blob/master/Preview%20of%20the%20app.png)
+![alt text](https://github.com/parthshethia786/chatapp-dotnetAspire-AzureOpenAI/blob/master/Preview%20of%20the%20app.png)
 
 Below is the step-by-step guide to run the application locally.
 
