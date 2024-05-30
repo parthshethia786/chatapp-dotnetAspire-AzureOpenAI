@@ -20,7 +20,7 @@ Let’s create a sample .NET Aspire application:
 
 Let’s create a new Azure Open AI service instance using Azure Developer CLI:
 
-- If you do not have Azure Developer CLI installed, you can install it on Windows using winget or visit the page to perform download:
+- If you do not have Azure Developer CLI installed, you can install it on Windows using winget or visit the page to perform the download:
   - <code>winget install microsoft.azd</code> 
   - https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows 
 - In Visual Studio, open the <code>Developer Powershell</code> (<code>View -> Terminal</code>).
@@ -35,6 +35,9 @@ Let’s create a new Azure Open AI service instance using Azure Developer CLI:
 
 Let’s integrate this new Azure Open AI service instance in our .NET Aspire project:
 
+- First, lets add the endpoint and the keys in our project using below command:
+  - <code>dotnet user-secrets set "ConnectionStrings:OpenAI" "Endpoint=your-azure-openai-endpoint-here;Key=your-azure-openai-key-here"</code>
+  - You can get the endpoint and key information from <code>Azure Portal -> Azure OpenAI resource -> Resource Management -> Keys and Endpoint</code>
 - In the AspireApp.AppHost project, install NuGet package - <code>Aspire.Hosting.Azure.CognitiveServices</code>.
 - In the AspireApp.AppHost project's <code>Program.cs</code>, add environment variable for Open AI connection string.
 - In the web front end project - <code>AspireApp.Web</code>, install below NuGet packages:
