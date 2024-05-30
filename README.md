@@ -35,13 +35,21 @@ Let’s create a new Azure Open AI service instance using Azure Developer CLI:
 
 Let’s integrate this new Azure Open AI service instance in our .NET Aspire project:
 
-- In the AspireApp.AppHost project, install NuGet package - <code>Aspire.Hosting.Azure.CognitiveServices</code>
+- In the AspireApp.AppHost project, install NuGet package - <code>Aspire.Hosting.Azure.CognitiveServices</code>.
 - In the AspireApp.AppHost project's <code>Program.cs</code>, add environment variable for Open AI connection string.
 - In the web front end project - <code>AspireApp.Web</code>, install below NuGet packages:
   - <code>Aspire.Azure.AI.OpenAI</code>
   - <code>Microsoft.SemanticKernel</code>
-- In the <code>Program.cs</code> of web front end project - <code>AspireApp.Web</code>, register <code>AzureOpenAIClient</code> and <code>AzureOpenAIChatCompletion service</code>
-
+- In the <code>Program.cs</code> of web front end project - <code>AspireApp.Web</code>, register <code>AzureOpenAIClient</code> and <code>AzureOpenAIChatCompletion service</code>. The core magic is with below 3 lines:
+  - <code>builder.Services.AddKernel();</code>
+  - <code>builder.AddAzureOpenAIClient("openai");</code>
+  - <code>builder.Services.AddAzureOpenAIChatCompletion(deploymentName);</code> - deploymentName here will be <code>gpt-3.5-turbo-16k</code>
+- Create a <code>ChatState.cs</code> wrapper that will be invoked from chat UI and will talk to chat completion service using the Semantic Kernel.
+- In <code>ChatState.cs</code>, we are initializing the <code>ChatHistory</code> with system message (initial prompt to the model). This can be customized based on business needs. 
+- The chat context is preserved is ChatHistory every time user asks a new questions/sends a new prompt. Hence entire context is provided to the model while processing the latest prompt.
+- The chat UI is inspired from the eShop application from Microsoft. You can copy the <code>Chatbot</code> folder from this repo under your Web project of the application - AspireApp.Web, under the Components folder. Add the <code>chat.png</code> image under <code>wwwroot</code> folder of AspireApp.Web. Hook the <code>ShowChatbotButton</code> component in <code>MainLayout.razor</code>. 
+- Once everything is wired up, run the .NET Aspire application and test the chat application from the webapp localhost URL.
+  
 **References**:
 
 - https://github.com/Azure-Samples/eShop-AI-Lab-Build2024
