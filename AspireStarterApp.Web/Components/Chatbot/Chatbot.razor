@@ -11,7 +11,7 @@
 @inject IServiceProvider ServiceProvider
 
 <div class="floating-pane">
-    <a href="@Nav.GetUriWithQueryParameter("chat", (string?)null)" class="hide-chatbot" title="Close SASsy"><span>✖</span></a>
+    <a href="@Nav.GetUriWithQueryParameter("chat", (string?)null)" class="hide-chatbot" title="Close MS-SASsy"><span>✖</span></a>
 
     <div class="chatbot-chat" @ref="chat">
         @if (chatState is not null)
@@ -31,7 +31,7 @@
 
         @if (thinking)
         {
-            <p class="thinking">SASsy is Thinking...</p>
+            <p class="thinking">MS-SASsy is Thinking...</p>
         }
     </div>
 

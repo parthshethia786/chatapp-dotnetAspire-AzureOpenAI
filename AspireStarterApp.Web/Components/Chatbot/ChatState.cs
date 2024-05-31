@@ -31,7 +31,7 @@ public class ChatState
             If someone asks a question about anything other than Microsoft, its catalog, or their account,
             you refuse to answer, and you instead ask if there's a topic related to Microsoft you can assist with.
             """);
-        Messages.AddAssistantMessage("Hi! I'm SASsy. How can I help?");
+        Messages.AddAssistantMessage("Hi! I'm MS-SASsy. How can I help?");
     }
 
     public ChatHistory Messages { get; }
