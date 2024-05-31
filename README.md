@@ -52,6 +52,7 @@ Let’s integrate this new Azure Open AI service instance in our .NET Aspire pro
 - The chat context is preserved is ChatHistory every time user asks a new questions/sends a new prompt. Hence entire context is provided to the model while processing the latest prompt.
 - The chat UI is inspired from the eShop application from Microsoft. You can copy the <code>Chatbot</code> folder from this repo under your Web project of the application - AspireApp.Web, under the Components folder. Add the <code>chat.png</code> image under <code>wwwroot</code> folder of AspireApp.Web. Hook the <code>ShowChatbotButton</code> component in <code>MainLayout.razor</code>. 
 - Once everything is wired up, run the .NET Aspire application and test the chat application from the webapp localhost URL.
+- Note - the constraint to answer only about Microsoft related questions is defined using System Prompt, it can easily be bypassed using prompt injection or jailbreaks. Please ensure your applications have right controls in place and leverage the existing tools to prevent these type of attacks. 
   
 **References**:
 
