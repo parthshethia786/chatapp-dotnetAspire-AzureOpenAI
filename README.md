@@ -36,7 +36,7 @@ Let’s create a new Azure Open AI service instance using Azure Developer CLI:
 Let’s integrate this new Azure Open AI service instance in our .NET Aspire project:
 
 - First, lets add the endpoint and the keys in our project using below command:
-  - <code>dotnet user-secrets set "ConnectionStrings:OpenAI" "Endpoint=your-azure-openai-endpoint-here;Key=your-azure-openai-key-here"</code>
+  - Run this command from Developer Powershell in Visual Studio and from AppHost project file location - <code>dotnet user-secrets set "ConnectionStrings:OpenAI" "Endpoint=your-azure-openai-endpoint-here;Key=your-azure-openai-key-here"</code>
   - You can get the endpoint and key information from <code>Azure Portal -> Azure OpenAI resource -> Resource Management -> Keys and Endpoint</code>
 - In the AspireApp.AppHost project, install NuGet package - <code>Aspire.Hosting.Azure.CognitiveServices</code>.
 - In the AspireApp.AppHost project's <code>Program.cs</code>, add environment variable for Open AI connection string.
